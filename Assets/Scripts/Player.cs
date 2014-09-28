@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     float angles;
     float speedX, speedY;
     //bool CanControl = true;
+    public static bool isPlay = true;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +19,10 @@ public class Player : MonoBehaviour {
         Basketball.transform.parent = hand;
         Basketball.rigidbody.useGravity = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
+        if(isPlay) {
         gameObject.transform.RotateAround(
             new Vector3(0.09215456f, -0.8153586f, 3.342688f),
             new Vector3(0, 1.0f, 0),
@@ -45,6 +47,7 @@ public class Player : MonoBehaviour {
             //CanControl = false;
         }
         //CanControl = true;
+        }
 	}
 
     IEnumerator MakeNextBall(Transform Pos, float time)
