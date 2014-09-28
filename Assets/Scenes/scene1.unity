@@ -2111,6 +2111,7 @@ GameObject:
   - 23: {fileID: 779983121}
   - 95: {fileID: 779983120}
   - 64: {fileID: 779983124}
+  - 114: {fileID: 779983125}
   m_Layer: 0
   m_Name: Hoop
   m_TagString: Untagged
@@ -2188,6 +2189,18 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: f3902b7f2c8563f4c993d97e46f75bbb, type: 3}
+--- !u!114 &779983125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 779983119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d5cf0863098c042b50bef31eda3254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: 5aed07945b1891f4bb10febe16a7c1bc, type: 3}
 --- !u!1 &786791862
 GameObject:
   m_ObjectHideFlags: 0
@@ -5638,6 +5651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4791839351e1a48ae34be31b01a177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enterSound: {fileID: 8300000, guid: f91d0fdb3902c3644ad0e8fec87272bb, type: 3}
 --- !u!1 &1963746509
 GameObject:
   m_ObjectHideFlags: 0

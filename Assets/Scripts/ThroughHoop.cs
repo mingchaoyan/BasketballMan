@@ -3,11 +3,12 @@ using System.Collections;
 
 public class ThroughHoop : MonoBehaviour {
     public static int score = 0;
-    int timeLength = 10;
-    int timeLeft = 10;
+    int timeLength = 60;
+    int timeLeft = 60;
     float totalTime = 0;
     bool showEndbutton = false;
     bool isPlay = true;
+    public AudioClip enterSound;
 
     void Update()
     {
@@ -36,6 +37,7 @@ public class ThroughHoop : MonoBehaviour {
         if (other.gameObject.name == "prefabBasketball(Clone)")
         {
             score += 2;
+            AudioSource.PlayClipAtPoint(enterSound, new Vector3(0, 0, 6));
         }
     }
 
