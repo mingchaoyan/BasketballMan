@@ -40,6 +40,7 @@ public class Player : MonoBehaviour {
             speedY = -6.0f * Mathf.Cos(angles * Mathf.Deg2Rad);
             Basketball.rigidbody.velocity = new Vector3(speedX, 3.3f, speedY);
             StartCoroutine(MakeNextBall(hand, 1.0f));
+            StartCoroutine(DestroyPreviouwsBall(Basketball, 5.0f));
             gameObject.animation.PlayQueued("idle");
             //CanControl = false;
         }
@@ -53,5 +54,11 @@ public class Player : MonoBehaviour {
         Basketball.transform.parent = hand;
         Basketball.rigidbody.useGravity = false;
         //CanControl = true;
+    }
+
+    IEnumerator DestroyPreviouwsBall(Rigidbody ball, float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(ball.gameObject);
     }
 }
