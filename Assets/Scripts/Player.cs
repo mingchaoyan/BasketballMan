@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
     public Rigidbody TempBasketball;
     public Transform hand;
     Rigidbody Basketball;
+    float angles;
+    float speedX, speedY;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +32,11 @@ public class Player : MonoBehaviour {
         {
             gameObject.animation.PlayQueued("fire");
             Basketball.transform.parent = null;
+            Basketball.rigidbody.useGravity = true;
+            angles = gameObject.transform.eulerAngles.y - 200;
+            speedX = -3.3f * Mathf.Tan(angles * Mathf.Deg2Rad);
+            speedY = -6.0f * Mathf.Cos(angles * Mathf.Deg2Rad);
+            Basketball.rigidbody.velocity = new Vector3(speedX, 3.3f, speedY);
             gameObject.animation.PlayQueued("idle");
         }
 	
