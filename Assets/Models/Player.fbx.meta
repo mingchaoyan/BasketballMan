@@ -393,6 +393,7 @@ ModelImporter:
     7400002: aim
     7400004: fire
     9500000: //RootNode
+    11100000: //RootNode
     13700000: body
     13700002: hair
     13700004: lw
@@ -1900,6 +1901,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
