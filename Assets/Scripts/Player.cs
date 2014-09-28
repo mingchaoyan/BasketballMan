@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
     Rigidbody Basketball;
     float angles;
     float speedX, speedY;
+    //bool CanControl = true;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour {
         {
             gameObject.animation.PlayQueued("aim");
         }
+        //else if(Input.GetButtonUp("Play") && CanControl)
         else if(Input.GetButtonUp("Play"))
         {
             gameObject.animation.PlayQueued("fire");
@@ -37,8 +39,19 @@ public class Player : MonoBehaviour {
             speedX = -3.3f * Mathf.Tan(angles * Mathf.Deg2Rad);
             speedY = -6.0f * Mathf.Cos(angles * Mathf.Deg2Rad);
             Basketball.rigidbody.velocity = new Vector3(speedX, 3.3f, speedY);
+            StartCoroutine(MakeNextBall(hand, 1.0f));
             gameObject.animation.PlayQueued("idle");
+            //CanControl = false;
         }
-	
+        //CanControl = true;
 	}
+
+    IEnumerator MakeNextBall(Transform Pos, float time)
+    {
+        yield return new WaitForSeconds(time);
+        Basketball = Instantiate(TempBasketball, hand.position, hand.rotation) as Rigidbody;
+        Basketball.transform.parent = hand;
+        Basketball.rigidbody.useGravity = false;
+        //CanControl = true;
+    }
 }
