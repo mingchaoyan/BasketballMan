@@ -5,3 +5,4 @@ obj/
 *.sln
 *.suo
 *.unityproj
+*.userprefs
